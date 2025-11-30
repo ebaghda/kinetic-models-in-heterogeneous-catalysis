@@ -25,16 +25,16 @@ def main():
 
     # format the plot with bold Arial font
     font = {'weight': 'bold', 'fontsize':16}
-    plt.xlabel("Pressure of A (kPa)", fontdict=font)
+    plt.xlabel("Pressure of Species A (kPa)", fontdict=font)
     plt.ylabel("Rate (mol/s)", fontdict=font)
     plt.title("Eley-Rideal Model", fontdict=font)
     plt.xticks(fontname=None, fontweight='bold', fontsize=12)
     plt.yticks(fontname=None, fontweight='bold', fontsize=12)
     # annotate the plots
     plt.annotate(
-        'Increasing ${K_A}$',
-        xy=(0.25, eley_rideal_model(2.5, 10, k_1=0.05, K_A=8)), # point to annotate (mid x, example K_A)
-        xytext=(2, eley_rideal_model(2.5, 10, k_1=0.05, K_A=0.1) + 0.01),   # text location above the point
+        'Increasing ${\lambda_A}$',
+        xy=(0.25, eley_rideal_model(2.5, 10, k_1=0.05, K_A=8)),
+        xytext=(2, eley_rideal_model(2.5, 10, k_1=0.05, K_A=0.1) + 0.01),
         arrowprops=dict(facecolor='black', arrowstyle='->', linewidth=1.5),
         fontsize=16,
         fontweight='normal'
