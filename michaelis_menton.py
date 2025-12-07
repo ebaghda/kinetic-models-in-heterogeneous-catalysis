@@ -33,9 +33,20 @@ def main():
         fontsize=16,
         fontweight='normal'
     )
+    plt.text(
+        0.85, 0.1,
+        r"$\mathrm{Rate} = \dfrac{V_{max} [A]}{K_M + [A]}$",
+        fontsize=13,
+        fontweight='bold',
+        ha='center',
+        va='center',
+        transform=plt.gca().transAxes,
+        bbox=dict(boxstyle="round,pad=0.4", fc="w", ec="black", lw=0, alpha=0)
+    )
     plt.tight_layout()
-    plt.savefig("michaelis_menton.png")
-    print("Saved figure to michaelis_menton.png")
+    figure_name = "michaelis_menton.png"
+    plt.savefig(figure_name)
+    print("Saved figure to " + figure_name)
 
 if __name__ == "__main__":
     main()
