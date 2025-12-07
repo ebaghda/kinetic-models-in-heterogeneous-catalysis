@@ -30,9 +30,28 @@ def main():
     plt.title("Langmuir-Hinshelwood Model", fontdict=font)
     plt.xticks(fontname=None, fontweight='bold', fontsize=12)
     plt.yticks(fontname=None, fontweight='bold', fontsize=12)
+    plt.annotate(
+        'Increasing ${K_A}$',
+        xy=(0.25, 0.1),
+        xytext=(2, 0.1),
+        arrowprops=dict(facecolor='black', arrowstyle='<-', linewidth=1.5),
+        fontsize=16,
+        fontweight='normal'
+    )
+    plt.text(
+        0.75, 0.1,
+        r"$\mathrm{Rate} = \dfrac{k_1 K_A p_A K_B p_B}{\left(1 + K_A p_A + K_B p_B\right)^2}$",
+        fontsize=13,
+        fontweight='bold',
+        ha='center',
+        va='center',
+        transform=plt.gca().transAxes,
+        bbox=dict(boxstyle="round,pad=0.1", fc="w", ec="black", lw=0, alpha=0.8)
+    )
     plt.tight_layout()
-    plt.savefig("langmuir-hinshelwood.png")
-    print("Saved figure to langmuir-hinshelwood.png")
+    figure_name = "langmuir-hinshelwood.png"
+    plt.savefig(figure_name)
+    print("Saved figure to " + figure_name)
 
 if __name__ == "__main__":
     main()
